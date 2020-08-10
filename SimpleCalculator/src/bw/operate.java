@@ -15,19 +15,19 @@ public class operate{
 	public void oper(String op) {              //do arithmetic operations
 		try {
 			switch (op) {
-			case "-":
-				ans= a-b;
-				break;
-			case "+":
+			case "add":
 				ans= a+b;
 				break;
-			case "/":
+			case "sub":
+				ans= a-b;
+				break;
+			case "div":
 				ans= a/b;
 				break;
-			case "*":
+			case "mul":
 				ans= a*b;
 				break;
-			case "%":
+			case "mod":
 				ans= a%b;
 			default:                          //handles invalid operators
 				System.out.println("Invalid operator");
