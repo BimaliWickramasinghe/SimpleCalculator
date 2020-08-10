@@ -2,15 +2,15 @@ package bw;
 import java.util.*;
 import java.io.*;
 
-public class readFile extends operate{             //handles file handling
+public class readFile extends operate{              //handles file handling
 	int[] num = new int[2];
 	int count=0;
+	String path;
 	
-	public boolean readMyFile(){                   //check whether file exists and its validity
-		boolean validity = false;                  //initialize validity to false
-		
+	public boolean readMyFile(){                    //check whether file exists and its validity
+		boolean validity = false;                   //initialize validity to false
 		try {
-			File myFile = new File("src\\bw\\myFile.txt"); //open file
+			File myFile = new File(path);           //open file
 			Scanner sc = new Scanner (myFile);      //read line
 			while(sc.hasNext()) {                   //check validity
 				if(check(sc.next())==true) {        //if the content is an integer validity is true
@@ -37,8 +37,8 @@ public class readFile extends operate{             //handles file handling
 		}	
 	}
 
-	                                               //Checks the validity of the content
-	public boolean check(String sc) {
+	                                               
+	public boolean check(String sc) {              //Checks the validity of the content
 		try {
 			num[count] = Integer.parseInt(sc);     //stores the value in an array
 			count +=1;                             //increment the counter by one
@@ -56,5 +56,9 @@ public class readFile extends operate{             //handles file handling
 	public void show() {                          //Shows the file content
 		System.out.println(num[0]);
 		System.out.println(num[1]);
+	}
+	
+	public void myPath(String p) {                //gets the path of the file
+		this.path= p; 
 	}
 }
