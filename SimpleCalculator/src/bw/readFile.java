@@ -6,7 +6,7 @@ public class readFile{
 	//constructor of superclass readFile
 	readFile(){
 		try {
-			File myFile = new File("myFile.txt");
+			File myFile = new File("src\\bw\\myFile.txt");
 			Scanner sc = new Scanner (myFile);
 			while(sc.hasNext()) {
 				check(sc.next());
