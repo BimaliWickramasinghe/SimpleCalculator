@@ -33,6 +33,7 @@ public class operate{
 				System.out.println("Invalid operator");
 			}
 			System.out.println("Your answer is : "+ ans);  //shows the answer
+			
 		}catch(ArithmeticException e) {        //handles any arithmetic exceptions
 			System.out.println(e);
 		}

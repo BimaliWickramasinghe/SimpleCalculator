@@ -13,7 +13,7 @@ public class Main{
 			String op = myInput.nextLine();          //takes the user input
 			myfile.oper(op);                         //do the operations
 			myInput.close();
-		}else {
+		}else{
 			System.out.println("Fix the above error");    //any error is informed
 		}
 	}

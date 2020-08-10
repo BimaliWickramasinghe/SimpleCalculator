@@ -2,12 +2,13 @@ package bw;
 import java.util.*;
 import java.io.*;
 
-public class readFile extends operate{
+public class readFile extends operate{             //handles file handling
 	int[] num = new int[2];
 	int count=0;
 	
 	public boolean readMyFile(){                   //check whether file exists and its validity
-		boolean validity = false;
+		boolean validity = false;                  //initialize validity to false
+		
 		try {
 			File myFile = new File("src\\bw\\myFile.txt"); //open file
 			Scanner sc = new Scanner (myFile);      //read line
@@ -21,10 +22,13 @@ public class readFile extends operate{
 				}
 			}
 			sc.close();
+			
 			System.out.println("Your file contains;");
 			show();                                //calls show() to show the file content
+			
 			this.setNum1(num[0]);                  //pass number 1 to operate class
 			this.setNum2(num[1]);                  //pass number 2 to operate class 
+			
 			return (validity);
 		}
 		catch (FileNotFoundException e){           //handles FileNotFoundException
@@ -33,7 +37,7 @@ public class readFile extends operate{
 		}	
 	}
 
-	//Checks the validity of the content
+	                                               //Checks the validity of the content
 	public boolean check(String sc) {
 		try {
 			num[count] = Integer.parseInt(sc);     //stores the value in an array
@@ -48,6 +52,7 @@ public class readFile extends operate{
 			return false;
 		}
 	}
+	
 	public void show() {                          //Shows the file content
 		System.out.println(num[0]);
 		System.out.println(num[1]);
